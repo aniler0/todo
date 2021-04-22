@@ -7,7 +7,7 @@ const Login = () => {
       <div className="login-box">
         <div className="top"></div>
         <h2>Kullanıcı Girişi</h2>
-        <form method="post">
+        <form>
           <div class="container">
             <input type="text" placeholder="İsim" name="name" required />
             <input type="password" placeholder="Şifre" name="psw" required />

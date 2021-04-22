@@ -1,5 +1,6 @@
 .login {
   border-radius: 10px;
+  margin-bottom: 2rem;
   text-align: center;
   box-shadow: 0 0 20px 5px rgb(216, 216, 216);
 }
@@ -17,11 +18,18 @@
   padding-bottom: 3em;
 }
 .container {
-  padding: 3em 5px;
+  padding: 2em 5px;
+  font-size: 80%;
+}
+.login-box h2 {
+  font-weight: 100;
+  font-size: large;
+  margin-top: 2rem;
 }
 input[type="text"],
 input[type="password"] {
   background-color: rgb(240, 240, 240);
+  outline: none;
   width: 60%;
   padding: 12px 5px;
   margin: 8px 0;
@@ -39,6 +47,7 @@ button {
     rgba(255, 231, 0, 1) 100%
   );
   color: rgb(0, 0, 0);
+  font-family: "Montserrat", sans-serif;
   padding: 1em 1em;
   margin: 8px 0;
   border-radius: 99px;
@@ -49,4 +58,12 @@ button {
 
 button:hover {
   opacity: 0.8;
+}
+@media screen and (max-width: 750px) {
+  .login-box {
+    width: 15rem;
+  }
+  .login-box h2 {
+    font-size: 1rem;
+  }
 }
