@@ -13,7 +13,6 @@ const Home = () => {
           perspiciatis accusantium.
         </h3>
       </header>
-
       <Login />
     </div>
   );
