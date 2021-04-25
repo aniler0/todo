@@ -1,5 +1,5 @@
 import React from "react";
-import Box from "../components/Box";
+import Boxes from "../components/Boxes";
 import "../styles/main.css";
 
 const Main = () => {
@@ -13,15 +13,19 @@ const Main = () => {
   const { day, month, year } = dateValue;
   return (
     <div className="main">
-      <div className="date">
+      <div className="top">
         <h1 className="h1">Bugün serinin {gun}.günü</h1>
         <h1 className="h2">
           Tarih: {day}.{month}.{year}
         </h1>
       </div>
 
-      <div className="day-box">
-        <Box />
+      <div className="middle">
+        <div className="day-box">
+          <Boxes />
+        </div>
+
+        <div className="mid-right"></div>
       </div>
     </div>
   );
