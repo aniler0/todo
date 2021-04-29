@@ -10,9 +10,9 @@
   background: rgb(255, 231, 0);
   background: linear-gradient(
     90deg,
-    rgba(255, 231, 0, 1) 0%,
-    rgba(250, 247, 0, 1) 50%,
-    rgba(255, 231, 0, 1) 100%
+    rgb(255, 145, 0) 0%,
+    rgb(255, 210, 64) 50%,
+    rgb(255, 234, 47) 100%
   );
   margin-bottom: 10px;
   padding-bottom: 3em;
@@ -43,7 +43,7 @@ input[type="password"] {
   background: rgb(255, 231, 0);
   background: linear-gradient(
     90deg,
-    rgb(255, 238, 84) 0%,
+    rgb(255, 146, 43) 0%,
     rgb(255, 225, 0) 100%
   );
   font-family: "Rubik", sans-serif;
