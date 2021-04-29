@@ -8,9 +8,8 @@ const Home = () => {
       <header>
         <h1>100 GÜN BOYUNCA KODLA</h1>
         <h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-          magni qui explicabo vitae quasi sapiente, a accusamus soluta
-          perspiciatis accusantium.
+          Bu projenin amacı yapmanız gereken işleri buraya kaydedip 100 gün
+          boyunca ilerlemenizi teşvik etmek.
         </h3>
       </header>
       <Login />

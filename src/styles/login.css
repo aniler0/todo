@@ -39,15 +39,16 @@ input[type="password"] {
   box-sizing: border-box;
 }
 
-button {
+.login-button {
   background: rgb(255, 231, 0);
   background: linear-gradient(
     90deg,
-    rgba(255, 231, 0, 1) 0%,
-    rgba(255, 231, 0, 1) 100%
+    rgb(255, 238, 84) 0%,
+    rgb(255, 225, 0) 100%
   );
+  font-family: "Rubik", sans-serif;
   color: rgb(0, 0, 0);
-  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
   padding: 1em 1em;
   margin: 8px 0;
   border-radius: 99px;
