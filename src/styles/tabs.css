@@ -1,0 +1,22 @@
+.tabs {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.tabs .button {
+  font-family: "Rubik", sans-serif;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  font-size: calc(0.4vw + 0.7rem);
+  background-color: #f9f9f9;
+  padding: 1em 2em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.tabs .active {
+  background-color: #ff8c42;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

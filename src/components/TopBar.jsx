@@ -1,11 +1,24 @@
 import React from "react";
-import "../styles/main.css";
-import { dateValue } from "../utils/Date";
+import Quote from "./Quote";
+import "../styles/topbar.css";
+
 const TopBar = () => {
   return (
     <>
-      <h1>100 GÜN KODLA</h1>
-      <p>Gün 1</p>
+      <div className="topbar">
+        <div className="topbar-left">
+          <h1>100 GÜN KODLA</h1>
+          <p>Gün 1</p>
+        </div>
+        <div className="quote">
+          <Quote />
+        </div>
+        <div className="topbar-right">
+          <div className="profile">
+            <h1>Merhaba Anıl</h1>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

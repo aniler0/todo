@@ -1,0 +1,18 @@
+.task-lisk {
+  max-height: 80%;
+  padding: 0 1rem;
+  overflow: auto;
+}
+.task-lisk div {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid rgb(151, 151, 151);
+  padding: 1rem 0rem;
+  margin-right: 1.5rem;
+}
+.task-lisk div h1 {
+  font-size: calc(0.3vw + 0.7rem);
+  font-weight: 500;
+}

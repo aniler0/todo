@@ -9,7 +9,8 @@ const Home = () => {
         <h1>100 GÜN BOYUNCA KODLA</h1>
         <h3>
           Bu projenin amacı yapmanız gereken işleri buraya kaydedip 100 gün
-          boyunca ilerlemenizi teşvik etmek.
+          boyunca uzun süreli hedeflerinizi başararak alışkanlık kazanmanızı
+          sağlamak.
         </h3>
       </header>
       <Login />

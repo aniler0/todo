@@ -10,7 +10,7 @@ import TopBar from "../components/TopBar";
 const Main = () => {
   return (
     <div className="main">
-      <div className="top-bar">
+      <div className="top">
         <TopBar />
       </div>
       <div className="todo">

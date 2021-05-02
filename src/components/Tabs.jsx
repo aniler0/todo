@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/main.css";
+import "../styles/tabs.css";
 const Tabs = () => {
   const refDo = useRef();
   const refDone = useRef();
@@ -20,7 +20,7 @@ const Tabs = () => {
   };
 
   return (
-    <div>
+    <>
       <div className="tabs">
         <Link
           ref={refDo}
@@ -39,7 +39,7 @@ const Tabs = () => {
           Tamamlanmış
         </Link>
       </div>
-    </div>
+    </>
   );
 };
 
