@@ -12,8 +12,7 @@ const Quote = () => {
     <>
       <h2>Daily Quote</h2>
       <p>
-        {quote.quote}
-        <footer>{quote.author}</footer>
+        "{quote.quote}"<footer>{quote.author}</footer>
       </p>
     </>
   );

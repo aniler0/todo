@@ -20,20 +20,7 @@
   margin-bottom: 0.5rem;
 }
 .topbar-right h1 {
-  font-size: calc(0.7vw + 0.5em);
-  font-weight: 400;
-}
-.quote {
-  color: rgb(0, 0, 0);
-  background-color: #f9c784;
-  border-radius: 9px;
-  padding: 0.4em;
-  margin-top: 1em;
-  margin-bottom: 1em;
   text-align: center;
-  box-shadow: 1px 1px 10px 1px #ffffff79;
-}
-.quote p {
-  margin-top: 5px;
-  font-style: italic;
+  font-size: calc(0.7vw + 0.8em);
+  font-weight: 400;
 }

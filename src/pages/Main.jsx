@@ -1,17 +1,20 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import { BrowserRouter as Switch, Route } from "react-router-dom";
+import AddTask from "../components/AddTask";
 import Tabs from "../components/Tabs";
 import Completed from "../pages/Completed";
 import TaskList from "../components/TaskList";
-import "../styles/main.css";
 import TopBar from "../components/TopBar";
+import "../styles/main.css";
 
 const Main = () => {
   return (
     <div className="main">
       <div className="top">
         <TopBar />
+      </div>
+      <div className="task">
+        <AddTask />
       </div>
       <div className="todo">
         <Tabs />

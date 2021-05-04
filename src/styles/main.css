@@ -11,11 +11,12 @@
   color: rgb(0, 0, 0);
   background-color: #fcaf58;
 }
+
 .todo {
-  margin-top: 6rem;
+  margin-top: 1rem;
   border-radius: 2%;
-  height: 50%;
+  height: 45%;
   max-width: 80%;
   background-color: #fffffe;
-  box-shadow: 0px 0px 10px 1px rgb(191, 191, 191);
+  box-shadow: 0px 0px 10px -5px rgb(133, 133, 133);
 }

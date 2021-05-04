@@ -20,6 +20,21 @@ const TaskList = () => {
         <div>
           <h1>Lorem, ipsum dolor.</h1>
         </div>
+        <div>
+          <h1>Lorem, ipsum dolor.</h1>
+        </div>
+        <div>
+          <h1>Lorem, ipsum dolor.</h1>
+        </div>
+        <div>
+          <h1>Lorem, ipsum dolor.</h1>
+        </div>
+        <div>
+          <h1>Lorem, ipsum dolor.</h1>
+        </div>
+        <div>
+          <h1>Lorem, ipsum dolor.</h1>
+        </div>
       </div>
     </>
   );
