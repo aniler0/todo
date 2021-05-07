@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Main from "../pages/Main";
-import "../styles/login.css";
+import "../Login/login.css";
 
 const Login = () => {
   const [name, setName] = useState("");
@@ -20,6 +19,7 @@ const Login = () => {
         <form>
           <div class="container">
             <input
+              className="text"
               value={name}
               type="text"
               placeholder="İsim"
@@ -28,6 +28,7 @@ const Login = () => {
               required
             />
             <input
+              className="password"
               value={password}
               type="password"
               placeholder="Şifre"

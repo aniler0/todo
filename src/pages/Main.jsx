@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Switch, Route } from "react-router-dom";
-import AddTask from "../components/AddTask";
-import Tabs from "../components/Tabs";
+import AddTask from "../components/AddTask/AddTask";
+import Tabs from "../components/Tabs/Tabs";
 import Completed from "../pages/Completed";
-import TaskList from "../components/TaskList";
-import TopBar from "../components/TopBar";
+import TaskList from "../components/TaskList/TaskList";
+import TopBar from "../components/TopBar/TopBar";
 import "../styles/main.css";
 
 const Main = () => {

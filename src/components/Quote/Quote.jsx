@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { fetchQuote } from "../utils/FetchQuote";
-import "../styles/quote.css";
+import { fetchQuote } from "../../utils/FetchQuote";
+import "../Quote/quote.css";
 
 const Quote = () => {
   const [quote, setQuote] = useState({});

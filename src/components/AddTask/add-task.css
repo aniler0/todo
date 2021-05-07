@@ -1,0 +1,76 @@
+.add-task {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  width: calc(6vw + 15em);
+  padding: 0.5em 2em;
+  border-radius: 10px;
+}
+.add-task h1 {
+  font-size: calc(0.6vw + 0.8em);
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.add-bar {
+  --size: 50px;
+  box-shadow: 0 0 3em rgba(0, 0, 0, 0.15);
+  display: flex;
+  border-radius: 15px;
+  height: calc(var(--size) - 7px);
+  width: calc(var(--size) - 7px);
+  padding: 3px;
+  position: relative;
+  transition: width 300ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  overflow: hidden;
+}
+.add-bar__input {
+  flex-grow: 1;
+  font-size: 1rem;
+  border-radius: 14px;
+  padding: 0 0.6em;
+  outline: none;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  line-height: calc(var(--size) - 3px);
+  opacity: 0;
+  cursor: pointer;
+}
+.add-bar:focus {
+  outline: 0;
+}
+.add-bar__submit {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  border-radius: 30%;
+  width: calc(var(--size) - 5px);
+  height: calc(var(--size) - 5px);
+  margin-left: auto;
+  transition: background 150ms ease-in-out;
+}
+
+.add-bar:focus-within {
+  width: 100%;
+}
+.add-bar:focus-within .add-bar__submit {
+  background-color: #6bf178;
+  color: rgb(0, 0, 0);
+  outline: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+.add-bar:focus-within .add-bar__input {
+  opacity: 1;
+  cursor: initial;
+  width: calc(95% - var(--size));
+}
+
+.add-icon {
+  width: 4.5vmin;
+  height: 4.5vmin;
+}

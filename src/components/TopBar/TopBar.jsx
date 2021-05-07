@@ -1,6 +1,6 @@
 import React from "react";
-import Quote from "./Quote";
-import "../styles/topbar.css";
+import Quote from "../Quote/Quote";
+import "../TopBar/topbar.css";
 
 const TopBar = () => {
   return (

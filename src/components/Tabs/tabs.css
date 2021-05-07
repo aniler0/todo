@@ -8,14 +8,14 @@
   color: black;
   font-weight: 500;
   font-size: calc(0.4vw + 0.7rem);
-  background-color: #f9f9f9;
+  background-color: #f0f0f0;
   padding: 1em 2em;
   border: none;
   outline: none;
   cursor: pointer;
 }
 .tabs .active {
-  background-color: #ff8c42;
+  background-color: #6bf178;
   border: none;
   outline: none;
   cursor: pointer;

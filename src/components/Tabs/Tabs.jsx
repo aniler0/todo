@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/tabs.css";
+import "../Tabs/tabs.css";
 const Tabs = () => {
   const refDo = useRef();
   const refDone = useRef();
