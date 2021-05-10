@@ -8,8 +8,15 @@
   text-align: center;
   box-shadow: 0 0 3em rgba(0, 0, 0, 0.15);
 }
+
 .quote p {
   margin-top: 5px;
   font-size: calc(0.4vw + 0.7em);
   font-style: italic;
+}
+.quote p::before {
+  content: '"';
+}
+.quote p::after {
+  content: '"';
 }

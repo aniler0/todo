@@ -11,9 +11,8 @@ const Quote = () => {
   return (
     <>
       <h2>Daily Quote</h2>
-      <p>
-        "{quote.quote}"<footer>{quote.author}</footer>
-      </p>
+      <p>{quote.quote}</p>
+      <footer>{quote.author}</footer>
     </>
   );
 };

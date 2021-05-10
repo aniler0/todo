@@ -1,40 +1,14 @@
 import React from "react";
+import Task from "../Task/Task";
 import "../TaskList/task-list.css";
 
-const TaskList = () => {
+const TaskList = ({ tasks }) => {
   return (
     <>
       <div className="task-lisk">
-        <div>
-          <h1>Lorem, ipsum dolor.</h1>
-        </div>
-        <div>
-          <h1>Lorem, ipsum dolor.</h1>
-        </div>
-        <div>
-          <h1>Lorem, ipsum dolor.</h1>
-        </div>
-        <div>
-          <h1>Lorem, ipsum dolor.</h1>
-        </div>
-        <div>
-          <h1>Lorem, ipsum dolor.</h1>
-        </div>
-        <div>
-          <h1>Lorem, ipsum dolor.</h1>
-        </div>
-        <div>
-          <h1>Lorem, ipsum dolor.</h1>
-        </div>
-        <div>
-          <h1>Lorem, ipsum dolor.</h1>
-        </div>
-        <div>
-          <h1>Lorem, ipsum dolor.</h1>
-        </div>
-        <div>
-          <h1>Lorem, ipsum dolor.</h1>
-        </div>
+        {tasks.map((task) => (
+          <Task task={task.value} />
+        ))}
       </div>
     </>
   );
