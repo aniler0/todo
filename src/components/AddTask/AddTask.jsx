@@ -5,13 +5,15 @@ import "../AddTask/add-task.css";
 const AddTask = ({ task, setTask, tasks, setTasks }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTasks([
-      ...tasks,
-      {
-        id: tasks.length,
-        value: task,
-      },
-    ]);
+
+    task &&
+      setTasks([
+        ...tasks,
+        {
+          id: tasks.length,
+          value: task,
+        },
+      ]);
 
     setTask("");
   };

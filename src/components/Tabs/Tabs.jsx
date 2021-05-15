@@ -28,7 +28,7 @@ const Tabs = () => {
           className={`button active ${active}`}
           to="/main"
         >
-          Yapılacaklar
+          Bugün Yapılacaklar
         </Link>
         <Link
           ref={refDone}
