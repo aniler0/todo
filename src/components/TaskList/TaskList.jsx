@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Task from "../Task/Task";
 import "../TaskList/task-list.css";
 
-const TaskList = ({ tasks }) => {
+const TaskList = ({ tasks, setTasks }) => {
+  const completeTask = (task) => {};
+
+  const deleteTask = (id) => {
+    const deletedTask = tasks.filter((t) => id !== t.id);
+    setTasks({ tasks: deletedTask });
+  };
   return (
     <>
       <div className="task-lisk">
         {tasks.map((task) => (
-          <Task task={task.value} />
+          <Task key={task.id} value={task.value} onDelete={deleteTask} />
         ))}
       </div>
     </>

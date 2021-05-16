@@ -8,8 +8,8 @@ import TopBar from "../components/TopBar/TopBar";
 import "../styles/main.css";
 
 const Main = () => {
-  const [task, setTask] = useState("");
-  const [tasks, setTasks] = useState([]);
+  const [task, setTask] = useState(""); //changing the task state
+  const [tasks, setTasks] = useState([]); //storages the task array state
 
   return (
     <div className="main">
@@ -27,7 +27,7 @@ const Main = () => {
       <div className="todo">
         <Tabs />
         <Route path="/main" exact>
-          <TaskList tasks={tasks} />
+          <TaskList tasks={tasks} setTasks={setTasks} />
         </Route>
         <Route path="/main/completed" component={Completed} />
       </div>

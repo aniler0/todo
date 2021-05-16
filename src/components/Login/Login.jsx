@@ -38,7 +38,7 @@ const Login = () => {
             />
 
             <Link to={name.length > 0 && password.length > 0 ? "/main" : "#"}>
-              <button onclick={logged} className="login-button" type="submit">
+              <button onClick={logged} className="login-button" type="submit">
                 GİRİŞ
               </button>
             </Link>

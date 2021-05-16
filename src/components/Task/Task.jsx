@@ -3,23 +3,19 @@ import { FcCheckmark } from "react-icons/fc";
 import { AiOutlineClose } from "react-icons/ai";
 import "./task.css";
 
-const Task = ({ task }) => {
-  const { isCompleted, setCompleted } = useState();
-  const completeTask = () => {};
-  const deleteTask = () => {};
-
+const Task = ({ key, value, onDelete }) => {
   return (
     <>
       <div className="task">
-        <h1 className="title">{task}</h1>
+        <h1 className="title">{value}</h1>
         <div className="selection">
-          <button className="selection__button">
-            <i>
+          <button onClick={() => onDelete(key)} className="selection__button">
+            <i title="Delete">
               <AiOutlineClose className="delete" />
             </i>
           </button>
-          <button onClick={completeTask} className="selection__button">
-            <i>
+          <button className="selection__button">
+            <i title="Complete">
               <FcCheckmark className="completed" />
             </i>
           </button>
