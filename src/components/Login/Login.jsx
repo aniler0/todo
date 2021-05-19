@@ -10,19 +10,22 @@ const Login = () => {
   const history = useHistory();
   const logged = (e) => {
     e.preventDefault();
+    if (name.length > 0 && password.length > 0) {
+      history.push("/main");
+    } else history.push("#");
   };
   return (
     <div className="login">
       <div className="login-box">
         <div className="top"></div>
-        <h2>Kullanıcı Girişi</h2>
+        <h2>Login</h2>
         <form>
-          <div class="container">
+          <div className="container">
             <input
               className="text"
               value={name}
               type="text"
-              placeholder="İsim"
+              placeholder="Username"
               name="name"
               onChange={(e) => setName(e.target.value)}
               required
@@ -31,17 +34,25 @@ const Login = () => {
               className="password"
               value={password}
               type="password"
-              placeholder="Şifre"
+              placeholder="Password"
               name="psw"
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-
-            <Link to={name.length > 0 && password.length > 0 ? "/main" : "#"}>
-              <button onClick={logged} className="login-button" type="submit">
-                GİRİŞ
+            <div className="buttons">
+              <button onClick={logged} className="login-button" type="button">
+                Login
               </button>
-            </Link>
+              <button
+                onClick={() => {
+                  history.push("/signup");
+                }}
+                className="sign-up-button"
+                type="button"
+              >
+                Sign up
+              </button>
+            </div>
           </div>
         </form>
       </div>

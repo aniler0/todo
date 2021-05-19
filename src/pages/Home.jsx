@@ -13,6 +13,7 @@ const Home = () => {
           sağlamak.
         </h3>
       </header>
+
       <Login />
     </div>
   );
