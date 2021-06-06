@@ -20,10 +20,10 @@ const Signup = () => {
                 required
               />
               <input
-                className="password"
-                type="password"
-                placeholder="Password"
-                name="psw"
+                className="text"
+                type="text"
+                placeholder="E-mail"
+                name="email"
                 required
               />
               <input

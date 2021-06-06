@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import "../Login/login.css";
 
 const Login = () => {
-  const [name, setName] = useState("");
+  const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
 
   const history = useHistory();
   const logged = (e) => {
     e.preventDefault();
-    if (name.length > 0 && password.length > 0) {
+    if (mail.length > 0 && password.length > 0) {
       history.push("/main");
     } else history.push("#");
   };
@@ -23,11 +23,11 @@ const Login = () => {
           <div className="container">
             <input
               className="text"
-              value={name}
+              value={mail}
               type="text"
-              placeholder="Username"
-              name="name"
-              onChange={(e) => setName(e.target.value)}
+              placeholder="E-mail"
+              name="e-mail"
+              onChange={(e) => setMail(e.target.value)}
               required
             />
             <input
