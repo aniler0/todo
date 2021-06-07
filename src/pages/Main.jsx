@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Switch, Route } from "react-router-dom";
 import AddTask from "../components/AddTask/AddTask";
+import { fetchTasks } from "../utils/FetchData";
 import Tabs from "../components/Tabs/Tabs";
 import Completed from "../pages/Completed";
 import TaskList from "../components/TaskList/TaskList";
@@ -10,6 +11,11 @@ import "../styles/main.css";
 const Main = () => {
   const [task, setTask] = useState(""); //changing the task state
   const [tasks, setTasks] = useState([]); //storages the task array state
+
+  useEffect(() => {
+    fetchTasks(setTasks);
+    console.log(tasks);
+  }, []);
 
   return (
     <div className="main">

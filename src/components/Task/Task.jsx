@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { FcCheckmark } from "react-icons/fc";
 import { AiOutlineClose } from "react-icons/ai";
-import "./task.css";
+import "../Task/task.css";
 
-const Task = ({ key, value, onDelete }) => {
+const Task = ({ task }) => {
   return (
-    <>
-      <div className="task">
-        <h1 className="title">{value}</h1>
+    <div>
+      <ul key={task.id} className="task">
+        <h1 className="title">{task.title}</h1>
         <div className="selection">
-          <button onClick={() => onDelete(key)} className="selection__button">
+          <button className="selection__button">
             <i title="Delete">
               <AiOutlineClose className="delete" />
             </i>
@@ -20,8 +20,8 @@ const Task = ({ key, value, onDelete }) => {
             </i>
           </button>
         </div>
-      </div>
-    </>
+      </ul>
+    </div>
   );
 };
 
