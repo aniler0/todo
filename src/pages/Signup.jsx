@@ -1,41 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { FaArrowCircleLeft } from "react-icons/fa";
+import { register } from "../utils/FetchData";
+import { REGISTER_BASLANGIC } from "../utils/Consts";
 import "../styles/signup.css";
+
 const Signup = () => {
   const history = useHistory();
+  const [user, setUser] = useState(REGISTER_BASLANGIC);
+  const [loading, setLoading] = useState(false);
+
+  const submit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    register(user, setUser, history, setLoading);
+  };
+  const handleOnChange = (event) => {
+    setUser({ ...user, [event.target.name]: event.target.value });
+  };
   return (
     <div className="signup">
       <div className="signup-container">
         <div className="signup-box">
           <div className="top"></div>
           <h2>Sign Up</h2>
-          <form>
+          <form onSubmit={submit}>
             <div className="container">
               <input
                 className="text"
                 type="text"
-                placeholder="Username"
                 name="name"
+                placeholder="Name"
+                value={user.name}
+                onChange={handleOnChange}
                 required
               />
               <input
                 className="text"
                 type="text"
-                placeholder="E-mail"
                 name="email"
+                placeholder="E-mail"
+                value={user.email}
+                onChange={handleOnChange}
                 required
               />
               <input
                 className="password"
                 type="password"
-                placeholder="Confirm Password"
-                name="psw"
+                name="password"
+                placeholder="Password"
+                value={user.password}
+                onChange={handleOnChange}
                 required
               />
               <div className="buttons">
                 <button className="signup-button">Sign up</button>
-
+                {loading && <p>Loading</p>}
                 <div
                   className="back-button"
                   onClick={() => {

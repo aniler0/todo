@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Switch, Route } from "react-router-dom";
 import AddTask from "../components/AddTask/AddTask";
-import { fetchTasks } from "../utils/FetchData";
+import { getTasks } from "../utils/FetchData";
 import Tabs from "../components/Tabs/Tabs";
 import Completed from "../pages/Completed";
 import TaskList from "../components/TaskList/TaskList";
@@ -13,9 +13,9 @@ const Main = () => {
   const [tasks, setTasks] = useState([]); //storages the task array state
 
   useEffect(() => {
-    fetchTasks(setTasks);
+    getTasks(setTasks);
     console.log(tasks);
-  }, []);
+  }, [tasks]);
 
   return (
     <div className="main">
