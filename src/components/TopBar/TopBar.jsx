@@ -1,8 +1,10 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import Quote from "../Quote/Quote";
 import "../TopBar/topbar.css";
 
 const TopBar = () => {
+  const history = useHistory();
   return (
     <>
       <div className="topbar">
@@ -15,7 +17,15 @@ const TopBar = () => {
         </div>
         <div className="topbar-right">
           <div className="profile">
-            <h1>Merhaba Anıl</h1>
+            <h1>Hi Anıl</h1>
+            <button
+              onClick={() => {
+                localStorage.removeItem("token");
+                history.push("/");
+              }}
+            >
+              Logout
+            </button>
           </div>
         </div>
       </div>

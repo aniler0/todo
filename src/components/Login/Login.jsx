@@ -1,46 +1,52 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { LOGIN_BASLANGIC } from "../../utils/Consts.js";
+import { login } from "../../utils/FetchData";
+import Loading from "../../assets/Loading.gif";
 import "../Login/login.css";
 
 const Login = () => {
-  const [mail, setMail] = useState("");
-  const [password, setPassword] = useState("");
-
+  const [user, setUser] = useState(LOGIN_BASLANGIC);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const history = useHistory();
-  const logged = (e) => {
+
+  const submit = (e) => {
     e.preventDefault();
-    if (mail.length > 0 && password.length > 0) {
-      history.push("/main");
-    } else history.push("#");
+    setLoading(true);
+    login(user, setUser, history, setLoading, setError);
   };
+  const handleOnChange = (event) => {
+    setUser({ ...user, [event.target.name]: event.target.value });
+  };
+
   return (
     <div className="login">
       <div className="login-box">
         <div className="top"></div>
         <h2>Login</h2>
-        <form>
+        <form onSubmit={submit}>
           <div className="container">
             <input
               className="text"
-              value={mail}
+              value={user.email}
+              name="email"
               type="text"
               placeholder="E-mail"
-              name="e-mail"
-              onChange={(e) => setMail(e.target.value)}
+              onChange={handleOnChange}
               required
             />
             <input
               className="password"
-              value={password}
+              value={user.password}
               type="password"
               placeholder="Password"
-              name="psw"
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              onChange={handleOnChange}
               required
             />
             <div className="buttons">
-              <button onClick={logged} className="login-button" type="button">
+              <button className="login-button" type="submit">
                 Login
               </button>
               <button
@@ -52,6 +58,14 @@ const Login = () => {
               >
                 Sign up
               </button>
+              {loading && (
+                <img
+                  src={Loading}
+                  alt="loading..."
+                  style={{ width: "100px" }}
+                />
+              )}
+              {error && <p style={{ color: "red" }}>{error}</p>}
             </div>
           </div>
         </form>

@@ -1,21 +1,21 @@
 import axios from "axios"
-import { REGISTER_BASLANGIC } from "./Consts";
+import { LOGIN_BASLANGIC, REGISTER_BASLANGIC } from "./Consts";
 
 const api = axios.create({
     baseURL: `https://todo-app-server1.herokuapp.com/api/`
 })
 const getTasks = async (setTasks) => {
-    await api.get("/tasks")
-        .then((res) =>
-            res.json()
-        )
-        .then((data) =>
-            setTasks(data)
-        )
+    await api.get("/tasks", {
+        headers: {
+            'auth-token': `${localStorage.getItem('token')}`
+        }
+    })
+
+
 
 }
 
-const register = async (user, setUser, history, setLoading) => {
+const register = async (user, setUser, history, setLoading, setError) => {
     await api.post(`/user/register`,
         user
     ).then(res => {
@@ -28,44 +28,51 @@ const register = async (user, setUser, history, setLoading) => {
     }).catch(err => {
         setLoading(false)
         if (err.response) {
-            // There is an error response from the server
-            // You can anticipate error.response.data here
             const error = err.response.data;
-            alert(error);
+            setError(error)
         } else if (err.request) {
-            // The request was made but no response was received
-            // Error details are stored in error.reqeust
             console.log(err.request);
         } else {
-            // Some other errors
             console.log('Error', err.message);
         }
     })
 
 }
 
-const login = async (name, email, password, history) => {
-    await api.post(`/user/register`, {
-        name: name,
-        email: email,
-        password: password,
-    }).then(res => {
-        history.push('/')
+const login = async (user, setUser, history, setLoading, setError) => {
+    await api.post(`/user/login`,
+        user
+    ).then(res => {
+        let token = res.data
+        setUser(LOGIN_BASLANGIC)
+        setLoading(false)
+        window.localStorage.setItem("token", token);
+        history.push('/main')
+
 
 
     }).catch(err => {
-        return err;
+        setLoading(false);
+        if (err.response) {
+            const error = err.response.data;
+            setError(error)
+        } else if (err.request) {
+            console.log(err.request);
+        } else {
+            console.log('Error', err.message);
+        }
 
     })
 
 }
-const newTask = async (name, email, password, history) => {
-    await api.post(`/user/register`, {
-        name: name,
-        email: email,
-        password: password,
+const newTask = async (task, history) => {
+    await api.post(`/tasks/newtask`, {
+        title: task
+    }, {
+        headers: {
+            'auth-token': `${localStorage.getItem('token')}`
+        }
     }).then(res => {
-        history.push('/')
 
 
     }).catch(err => {

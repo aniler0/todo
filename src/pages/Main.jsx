@@ -13,7 +13,7 @@ const Main = () => {
   const [tasks, setTasks] = useState([]); //storages the task array state
 
   useEffect(() => {
-    getTasks(setTasks);
+    //getTasks(setTasks);
     console.log(tasks);
   }, [tasks]);
 

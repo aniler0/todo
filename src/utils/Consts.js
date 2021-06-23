@@ -3,3 +3,7 @@ export const REGISTER_BASLANGIC = {
     email: "",
     password: "",
 };
+export const LOGIN_BASLANGIC = {
+    email: "",
+    password: "",
+};

@@ -3,17 +3,19 @@ import { useHistory } from "react-router-dom";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { register } from "../utils/FetchData";
 import { REGISTER_BASLANGIC } from "../utils/Consts";
+import Loading from "../assets/Loading.gif";
 import "../styles/signup.css";
 
 const Signup = () => {
   const history = useHistory();
   const [user, setUser] = useState(REGISTER_BASLANGIC);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const submit = (e) => {
     e.preventDefault();
     setLoading(true);
-    register(user, setUser, history, setLoading);
+    register(user, setUser, history, setLoading, setError);
   };
   const handleOnChange = (event) => {
     setUser({ ...user, [event.target.name]: event.target.value });
@@ -55,7 +57,14 @@ const Signup = () => {
               />
               <div className="buttons">
                 <button className="signup-button">Sign up</button>
-                {loading && <p>Loading</p>}
+                {loading && (
+                  <img
+                    src={Loading}
+                    alt="loading..."
+                    style={{ width: "100px" }}
+                  />
+                )}
+                {error && <p style={{ color: "red" }}>{error}</p>}
                 <div
                   className="back-button"
                   onClick={() => {

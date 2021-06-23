@@ -1,10 +1,12 @@
 import React from "react";
 import { AiOutlinePlusSquare } from "react-icons/ai";
+import { newTask } from "../../utils/FetchData";
 import "../AddTask/add-task.css";
 
 const AddTask = ({ task, setTask, tasks, setTasks }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
+    newTask(task);
 
     task &&
       setTasks([
