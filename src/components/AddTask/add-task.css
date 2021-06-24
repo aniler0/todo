@@ -13,6 +13,9 @@
   font-weight: 400;
   margin-bottom: 10px;
 }
+.add-task img {
+  width: 80px;
+}
 .add-bar {
   --size: 50px;
   box-shadow: 0 0 3em rgba(0, 0, 0, 0.15);

@@ -4,14 +4,15 @@ import { LOGIN_BASLANGIC, REGISTER_BASLANGIC } from "./Consts";
 const api = axios.create({
     baseURL: `https://todo-app-server1.herokuapp.com/api/`
 })
-const getTasks = async (setTasks) => {
+const getTasks = async () => {
     await api.get("/tasks", {
         headers: {
             'auth-token': `${localStorage.getItem('token')}`
         }
+
+    }).then(res => {
+
     })
-
-
 
 }
 
@@ -65,7 +66,7 @@ const login = async (user, setUser, history, setLoading, setError) => {
     })
 
 }
-const newTask = async (task, history) => {
+const newTask = async (task, setLoading) => {
     await api.post(`/tasks/newtask`, {
         title: task
     }, {
@@ -73,7 +74,8 @@ const newTask = async (task, history) => {
             'auth-token': `${localStorage.getItem('token')}`
         }
     }).then(res => {
-
+        console.log(res.data)
+        setLoading(false)
 
     }).catch(err => {
         return err;
@@ -81,13 +83,14 @@ const newTask = async (task, history) => {
     })
 
 }
-const updateTask = async (name, email, password, history) => {
-    await api.post(`/user/register`, {
-        name: name,
-        email: email,
-        password: password,
+const updateTask = async (isCompleted, id) => {
+    await api.put(`/tasks/${id}`, {
+        completed: true,
+    }, {
+        headers: {
+            'auth-token': `${localStorage.getItem('token')}`
+        }
     }).then(res => {
-        history.push('/')
 
 
     }).catch(err => {
