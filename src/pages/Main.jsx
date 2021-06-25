@@ -9,31 +9,24 @@ import TopBar from "../components/TopBar/TopBar";
 import "../styles/main.css";
 
 const Main = () => {
-  const [task, setTask] = useState(""); //changing the task state
-  const [tasks, setTasks] = useState([]); //storages the task array state
-
+  const [tasks, setTasks] = useState([]);
   useEffect(() => {
-    //getTasks(setTasks);
-    console.log(tasks);
-  }, [tasks]);
+    getTasks(setTasks);
+  }, []);
 
   return (
     <div className="main">
       <div className="top">
-        <TopBar />
+        <TopBar /> {/* Kodlandı */}
       </div>
       <div>
-        <AddTask
-          task={task}
-          setTask={setTask}
-          tasks={tasks}
-          setTasks={setTasks}
-        />
+        <AddTask tasks={tasks} setTasks={setTasks} />
+        {/* Kodlandı veriler veritabanına gitti */}
       </div>
       <div className="todo">
         <Tabs />
         <Route path="/main" exact>
-          <TaskList tasks={tasks} setTasks={setTasks} />
+          <TaskList setTasks={setTasks} tasks={tasks} />
         </Route>
         <Route path="/main/completed" component={Completed} />
       </div>

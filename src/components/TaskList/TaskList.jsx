@@ -1,23 +1,16 @@
 import React, { useState } from "react";
-
 import { deleteData } from "../../utils/FetchData";
-
-import "../TaskList/task-list.css";
 import Task from "../Task/Task";
+import "../TaskList/task-list.css";
 
-const TaskList = ({ tasks, setTasks }) => {
-  const deleteTask = (id) => {
-    const deletedTask = tasks.filter((t) => id !== t.id);
-    deleteData(id);
-    setTasks(deletedTask);
-  };
-
+const TaskList = ({ setTasks, tasks }) => {
   return (
     <>
-      <div className="task-lisk">
-        {tasks.map((task, index) => (
-          <Task task={task} key={index} setTasks={setTasks} />
-        ))}
+      <div className="task-list">
+        {tasks &&
+          tasks.map((task, index) => (
+            <Task task={task} key={index} setTasks={setTasks} tasks={tasks} />
+          ))}
       </div>
     </>
   );

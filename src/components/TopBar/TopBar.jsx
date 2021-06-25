@@ -5,6 +5,7 @@ import "../TopBar/topbar.css";
 
 const TopBar = () => {
   const history = useHistory();
+  let name = localStorage.getItem("name");
   return (
     <>
       <div className="topbar">
@@ -17,7 +18,7 @@ const TopBar = () => {
         </div>
         <div className="topbar-right">
           <div className="profile">
-            <h1>Hi Anıl</h1>
+            <h1>name</h1>
             <button
               onClick={() => {
                 localStorage.removeItem("token");
