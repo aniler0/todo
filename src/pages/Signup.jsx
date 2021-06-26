@@ -16,7 +16,6 @@ const Signup = () => {
     e.preventDefault();
     setLoading(true);
     register(user, setUser, history, setLoading, setError);
-    window.localStorage.setItem("name", `${user.name}`);
   };
   const handleOnChange = (event) => {
     setUser({ ...user, [event.target.name]: event.target.value });

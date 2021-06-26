@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { deleteData } from "../../utils/FetchData";
+import React from "react";
 import Task from "../Task/Task";
 import "../TaskList/task-list.css";
 
@@ -8,9 +7,11 @@ const TaskList = ({ setTasks, tasks }) => {
     <>
       <div className="task-list">
         {tasks &&
-          tasks.map((task, index) => (
-            <Task task={task} key={index} setTasks={setTasks} tasks={tasks} />
-          ))}
+          tasks
+            .filter((task) => task.completed === false)
+            .map((task, index) => (
+              <Task task={task} key={index} setTasks={setTasks} tasks={tasks} />
+            ))}
       </div>
     </>
   );

@@ -5,23 +5,26 @@ import "../TopBar/topbar.css";
 
 const TopBar = () => {
   const history = useHistory();
-  let name = localStorage.getItem("name");
+  const name = localStorage.getItem("name");
+  const score = localStorage.getItem("score");
   return (
     <>
       <div className="topbar">
         <div className="topbar-left">
-          <h1>100 GÜN KODLA</h1>
-          <p>Gün 1</p>
+          <h1>Task Challenge</h1>
+          <p>Score:{score}</p>
         </div>
         <div className="quote">
           <Quote />
         </div>
         <div className="topbar-right">
           <div className="profile">
-            <h1>name</h1>
+            <h1>Hello {name}</h1>
             <button
               onClick={() => {
                 localStorage.removeItem("token");
+                localStorage.removeItem("name");
+                localStorage.removeItem("score");
                 history.push("/");
               }}
             >

@@ -10,6 +10,7 @@ import "../styles/main.css";
 
 const Main = () => {
   const [tasks, setTasks] = useState([]);
+
   useEffect(() => {
     getTasks(setTasks);
   }, []);
@@ -28,7 +29,9 @@ const Main = () => {
         <Route path="/main" exact>
           <TaskList setTasks={setTasks} tasks={tasks} />
         </Route>
-        <Route path="/main/completed" component={Completed} />
+        <Route path="/main/completed">
+          <Completed setTasks={setTasks} tasks={tasks} />
+        </Route>
       </div>
     </div>
   );

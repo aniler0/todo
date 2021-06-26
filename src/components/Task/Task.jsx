@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { FcCheckmark } from "react-icons/fc";
 import { AiOutlineClose } from "react-icons/ai";
 import "../Task/task.css";
-import { deleteData } from "../../utils/FetchData";
+import { deleteData, updateTask } from "../../utils/FetchData";
 
 const Task = ({ task, setTasks }) => {
   const id = task._id;
@@ -22,7 +22,9 @@ const Task = ({ task, setTasks }) => {
               </i>
             </button>
             <button
-              onClick={() => deleteData(id, setTasks)}
+              onClick={() => {
+                updateTask(id, setTasks);
+              }}
               className="selection__button"
             >
               <i title="Complete">

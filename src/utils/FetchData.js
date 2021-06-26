@@ -11,7 +11,7 @@ const getTasks = async (setTasks) => {
         }
 
     }).then(res => {
-        setTasks(res.data.tasks)
+        setTasks(res.data.tasks);
 
     })
 
@@ -21,7 +21,7 @@ const register = async (user, setUser, history, setLoading, setError) => {
     await api.post(`/user/register`,
         user
     ).then(res => {
-        console.log(user)
+
         setUser(REGISTER_BASLANGIC);
         setLoading(false)
         history.push('/')
@@ -45,10 +45,12 @@ const login = async (user, setUser, history, setLoading, setError) => {
     await api.post(`/user/login`,
         user
     ).then(res => {
-        let token = res.data
+        let token = res.data.token
+        const name = res.data.name
         setUser(LOGIN_BASLANGIC)
         setLoading(false)
         window.localStorage.setItem("token", token);
+        window.localStorage.setItem("name", name);
         history.push('/main')
 
 
@@ -85,7 +87,7 @@ export const newTask = async (task, setTasks, tasks) => {
     })
 
 }
-export const updateTask = async (id) => {
+export const updateTask = async (id, setTasks) => {
     await api.put(`/tasks/${id}`, {
         completed: true,
     }, {
@@ -93,8 +95,8 @@ export const updateTask = async (id) => {
             'auth-token': `${localStorage.getItem('token')}`
         }
     }).then(res => {
-
-
+        window.localStorage.setItem("score", res.data.score);
+        getTasks(setTasks)
     }).catch(err => {
         return err;
 
