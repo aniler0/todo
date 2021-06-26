@@ -10,15 +10,16 @@ import "../styles/main.css";
 
 const Main = () => {
   const [tasks, setTasks] = useState([]);
+  const [score, setScore] = useState("0");
 
   useEffect(() => {
-    getTasks(setTasks);
+    getTasks(setTasks, setScore);
   }, []);
 
   return (
     <div className="main">
       <div className="top">
-        <TopBar /> {/* Kodlandı */}
+        <TopBar score={score} /> {/* Kodlandı */}
       </div>
       <div>
         <AddTask tasks={tasks} setTasks={setTasks} />
@@ -27,7 +28,7 @@ const Main = () => {
       <div className="todo">
         <Tabs />
         <Route path="/main" exact>
-          <TaskList setTasks={setTasks} tasks={tasks} />
+          <TaskList setTasks={setTasks} tasks={tasks} setScore={setScore} />
         </Route>
         <Route path="/main/completed">
           <Completed setTasks={setTasks} tasks={tasks} />

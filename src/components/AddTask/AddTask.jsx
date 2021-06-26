@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { AiOutlinePlusSquare } from "react-icons/ai";
-import { getTasks, newTask } from "../../utils/FetchData";
+import { newTask } from "../../utils/FetchData";
 import "../AddTask/add-task.css";
 
 const AddTask = ({ tasks, setTasks }) => {

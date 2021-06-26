@@ -4,7 +4,7 @@ import { LOGIN_BASLANGIC, REGISTER_BASLANGIC } from "./Consts";
 const api = axios.create({
     baseURL: `https://todo-app-server1.herokuapp.com/api/`
 })
-const getTasks = async (setTasks) => {
+const getTasks = async (setTasks, setScore) => {
     await api.get("/tasks", {
         headers: {
             'auth-token': `${localStorage.getItem('token')}`
@@ -12,6 +12,9 @@ const getTasks = async (setTasks) => {
 
     }).then(res => {
         setTasks(res.data.tasks);
+        setScore(res.data.score);
+
+
 
     })
 
@@ -87,7 +90,7 @@ export const newTask = async (task, setTasks, tasks) => {
     })
 
 }
-export const updateTask = async (id, setTasks) => {
+export const updateTask = async (id, setTasks, setScore) => {
     await api.put(`/tasks/${id}`, {
         completed: true,
     }, {
@@ -95,8 +98,7 @@ export const updateTask = async (id, setTasks) => {
             'auth-token': `${localStorage.getItem('token')}`
         }
     }).then(res => {
-        window.localStorage.setItem("score", res.data.score);
-        getTasks(setTasks)
+        getTasks(setTasks, setScore)
     }).catch(err => {
         return err;
 
@@ -104,13 +106,13 @@ export const updateTask = async (id, setTasks) => {
 
 }
 
-export const deleteData = async (id, setTasks) => {
+export const deleteData = async (id, setTasks, setScore) => {
     await api.delete(`/tasks/${id}`, {
         headers: {
             'auth-token': `${localStorage.getItem('token')}`
         }
     }).then(res => {
-        getTasks(setTasks)
+        getTasks(setTasks, setScore)
 
 
 

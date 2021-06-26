@@ -2,7 +2,7 @@ import React from "react";
 import Task from "../Task/Task";
 import "../TaskList/task-list.css";
 
-const TaskList = ({ setTasks, tasks }) => {
+const TaskList = ({ setTasks, tasks, setScore }) => {
   return (
     <>
       <div className="task-list">
@@ -10,7 +10,13 @@ const TaskList = ({ setTasks, tasks }) => {
           tasks
             .filter((task) => task.completed === false)
             .map((task, index) => (
-              <Task task={task} key={index} setTasks={setTasks} tasks={tasks} />
+              <Task
+                task={task}
+                key={index}
+                setTasks={setTasks}
+                tasks={tasks}
+                setScore={setScore}
+              />
             ))}
       </div>
     </>

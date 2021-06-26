@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { FcCheckmark } from "react-icons/fc";
 import { AiOutlineClose } from "react-icons/ai";
 import "../Task/task.css";
 import { deleteData, updateTask } from "../../utils/FetchData";
 
-const Task = ({ task, setTasks }) => {
+const Task = ({ task, setTasks, setScore }) => {
   const id = task._id;
 
   return (
@@ -14,7 +14,7 @@ const Task = ({ task, setTasks }) => {
           <h1 className="title">{task.title}</h1>
           <div className="selection">
             <button
-              onClick={() => deleteData(id, setTasks)}
+              onClick={() => deleteData(id, setTasks, setScore)}
               className="selection__button"
             >
               <i title="Delete">
@@ -23,7 +23,7 @@ const Task = ({ task, setTasks }) => {
             </button>
             <button
               onClick={() => {
-                updateTask(id, setTasks);
+                updateTask(id, setTasks, setScore);
               }}
               className="selection__button"
             >

@@ -3,10 +3,10 @@ import { useHistory } from "react-router-dom";
 import Quote from "../Quote/Quote";
 import "../TopBar/topbar.css";
 
-const TopBar = () => {
+const TopBar = ({ score }) => {
   const history = useHistory();
   const name = localStorage.getItem("name");
-  const score = localStorage.getItem("score");
+
   return (
     <>
       <div className="topbar">

@@ -6,11 +6,9 @@ const Home = () => {
   return (
     <div className="home">
       <header>
-        <h1>100 GÜN ÇALIŞ</h1>
+        <h1>Task Challenge</h1>
         <h3>
-          Bu projenin amacı yapmanız gereken işleri buraya kaydedip 100 gün
-          boyunca uzun süreli hedeflerinizi başararak alışkanlık kazanmanızı
-          sağlamak.
+          Add your tasks, complete and get points from every completed task.
         </h3>
       </header>
 
